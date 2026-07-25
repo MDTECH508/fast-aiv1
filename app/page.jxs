@@ -1,0 +1,23 @@
+"use client";
+
+import { useState } from "react";
+import ChatUI from "../components/ChatUI";
+import "../styles/globals.css";
+
+export default function Page() {
+  return (
+    <main className="page-root">
+      <header className="app-header glass">
+        <h1 className="logo-3d">Deepseek-like AI</h1>
+      </header>
+
+      <section className="app-container">
+        <ChatUI />
+      </section>
+
+      <footer className="app-footer glass">
+        <small>© Demo — Search + AI with source citations</small>
+      </footer>
+    </main>
+  );
+}
