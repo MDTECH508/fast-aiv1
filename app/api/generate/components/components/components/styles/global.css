@@ -1,0 +1,41 @@
+:root{
+  --glass-bg: rgba(255,255,255,0.04);
+  --glass-border: rgba(255,255,255,0.06);
+  --accent: linear-gradient(135deg,#6ea1ff,#b28cff);
+  --neo-shadow: 0 10px 30px rgba(2,6,20,0.6);
+  color-scheme: dark;
+}
+*{box-sizing:border-box}
+body,html,#__next{height:100%}
+body { margin:0; font-family:Inter,system-ui,Arial; background:linear-gradient(180deg,#0b0d12,#10131a); color:#e6f1ff; }
+
+.page-root{min-height:100vh;display:flex;flex-direction:column}
+.app-header, .app-footer{padding:14px 20px;margin:12px;border-radius:12px;display:flex;align-items:center;justify-content:space-between;backdrop-filter: blur(8px) saturate(120%);border:1px solid var(--glass-border);box-shadow:var(--neo-shadow);background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));}
+.logo-3d{font-weight:700;background:var(--accent);-webkit-background-clip:text;background-clip:text;color:transparent;font-size:18px}
+
+.app-container{flex:1;display:flex;align-items:center;justify-content:center;padding:20px}
+.chat-root{width:100%;max-width:900px;display:flex;flex-direction:column;gap:12px}
+.glass{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.04);backdrop-filter:blur(10px);border-radius:12px}
+.controls{display:flex;gap:12px;padding:10px;align-items:center}
+.controls label{font-size:13px;color:#cfe6ff}
+.controls select{margin-left:8px;padding:6px 8px;background:rgba(0,0,0,0.25);border-radius:8px;color:#fff;border:none}
+
+.messages{display:flex;flex-direction:column;gap:10px;padding:14px;max-height:56vh;overflow:auto;border-radius:10px}
+.msg{max-width:86%;padding:10px 12px;border-radius:12px;position:relative;transform-style:preserve-3d;transition:transform 220ms,box-shadow 220ms;box-shadow:0 8px 24px rgba(0,0,0,0.6);background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03)}
+.msg-user{margin-left:auto;background:linear-gradient(180deg, rgba(138,182,255,0.08), rgba(80,120,200,0.04));transform:translateZ(6px)}
+.msg-assistant{margin-right:auto;transform:translateZ(2px)}
+.msg-content{font-size:15px;line-height:1.45;color:#e6f1ff}
+.typing-row{display:flex;align-items:center;padding:10px 14px}
+.typing-indicator{display:flex;gap:6px;align-items:center;padding:6px 8px}
+.dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.9);opacity:0.12;box-shadow:0 6px 14px rgba(0,0,0,0.6)}
+.dot1{animation:bob 900ms infinite ease-in-out 0ms}
+.dot2{animation:bob 900ms infinite ease-in-out 120ms}
+.dot3{animation:bob 900ms infinite ease-in-out 240ms}
+@keyframes bob{0%{transform:translateY(0);opacity:0.18}40%{transform:translateY(-7px);opacity:0.95}100%{transform:translateY(0);opacity:0.18}}
+.composer{display:flex;gap:10px;padding:10px;align-items:flex-end}
+.composer textarea{width:100%;resize:vertical;min-height:44px;max-height:140px;padding:10px;border-radius:10px;border:none;background:rgba(5,8,15,0.3);color:#eaf5ff}
+.composer-actions{display:flex;gap:8px;align-items:center}
+.btn{padding:8px 12px;border-radius:9px;background:linear-gradient(180deg,#6ea1ff,#3570ff);color:white;border:none;cursor:pointer}
+.progress-wrap{height:6px;width:100%;background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:8px;overflow:hidden}
+.progress-bar{height:100%;background:linear-gradient(90deg,#88b6ff,#b28cff);width:0%;transition:width 120ms linear}
+@media (max-width:720px){.app-header,.app-footer{margin:8px}.chat-root{max-width:100%;padding:6px}}
